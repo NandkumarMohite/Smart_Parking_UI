@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css'; 
+import { ToastContainer, toast } from 'react-toastify'; 
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CheckInComponant from './components/CheckInComponent';
+import CheckOutInitiatorComponant from './components/CheckOutInititerComponent';
+import PaymentComponent from './components/PayementComponent';
+import LoginComponent from './components/LoginComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <BrowserRouter>
+
+      <Routes>
+      <Route path="/" element={<CheckInComponant/>}></Route>
+      <Route path="/CheckOutItitor" element={<CheckOutInitiatorComponant/>}></Route>
+      <Route path="/payment" element={<PaymentComponent/>}></Route>
+      <Route path="/login" element={<LoginComponent/>}></Route>
+      </Routes>
+      <ToastContainer /> 
+      </BrowserRouter>
     </div>
   );
 }
