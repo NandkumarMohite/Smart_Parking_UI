@@ -28,9 +28,25 @@ function CheckInComponant() {
         "vehicleType": vehicleType
     }
     function handleClick() {
+        fetch('http://localhost:8888/availability', {
 
-        console.log(jsonData);
-        fetch('http://localhost:8888/CheckIn', {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'accept': 'application/json'
+            },
+            
+
+        }).then((result) => {
+            result.json().then((Response) => {
+
+                var Output =Response.Output;
+                console.log(Output.length)
+                if(Output.length>15){
+
+                    console.log(jsonData);
+           fetch('http://localhost:8888/CheckIn', {
 
             method: 'POST',
             mode: 'cors',
@@ -57,6 +73,16 @@ function CheckInComponant() {
                 }
             })
         })
+
+                }
+                else{
+                    toast.error(Output)
+                }
+                
+            })
+        })
+        
+        
     }
     return (
         <>
