@@ -125,3 +125,145 @@ a {
   margin-left:1%
 }
 
+
+.checkLable{
+  margin-left: 15%;
+}
+
+.welcomComponentMain{
+  display: flex;
+width: 100%;
+height: 100vh;
+}
+.sideBar{
+  width: 20%;
+}
+.containtInf{
+  width: 80%;
+margin-left: 20%;
+}
+
+.sideBar h3 {
+
+  margin-left: 20px;
+
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------
+ */
+ .container {
+  max-width: 100%; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
+.buttonCart{
+  margin-bottom: 10px;
+  color: black;
+  background: lightgreen;
+  border: aliceblue;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  /* margin-bottom: 20px; */
+  margin: 10px auto;
+  width: 100%;
+   gap: 10%;
+}
+
+.col-md-6 {
+  width: 50%; /* Each column takes half of the row width */
+  padding: 10px; /* Adjust the padding as needed */
+}
+
+.card {
+position: relative;
+background-color: white !important;
+
+width: 150%;
+  border: 1px solid #ccc;
+
+  border-radius: 10px;
+  border-color: rgb(83, 221, 221);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.card .element-description {
+  font-size: 14px;
+  color: #888;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  transition: -webkit-line-clamp 0.3s;
+}
+
+.button-class {
+  outline: auto;
+ 
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px 10px;
+   background-color: aqua;
+  color: black;
+  border-radius: 10px;
+  
+  transition: background-color 0.3s;
+  width: 111px;
+  height: 42px;
+}
+
+.green-icon {
+  color: green;
+  margin-right: 6px;
+}
+
+
+
+.card-image {
+  width: 150px; /* Fixed width of the image */
+  height: 100%; /* Make the image fill the height of the card */
+  object-fit: cover; /* Adjust the image's aspect ratio */
+  border-left: 4px; /* Border on the left side */
+  border-top-left-radius: 10px; /* Round the top-left corner */
+  border-bottom-left-radius: 10px;
+}
+
+
+.card-details {
+  flex: 1; /* Take remaining space in the card */
+  padding: 20px; /* Adjust the spacing between image and details */
+}
+
+/* Example card content styles */
+.card h3 {
+   font-size: 18px;
+  margin-bottom: 10px;
+  color: blue;
+  font-style: initial;
+  font-family: cursive;
+font-weight: bolder;
+}
+
+.card p {
+  font-size: 14px;
+  color: #888;
+}
+
+.card-image{
+margin: 10px -34px 10px 50px
+}
