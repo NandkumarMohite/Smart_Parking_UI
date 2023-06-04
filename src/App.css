@@ -178,7 +178,8 @@ margin-left: 20%;
   /* margin-bottom: 20px; */
   margin: 10px auto;
   width: 100%;
-   gap: 10%;
+  justify-content: space-between;
+
 }
 
 .col-md-6 {
@@ -190,7 +191,8 @@ margin-left: 20%;
 position: relative;
 background-color: white !important;
 
-width: 150%;
+width: 265px;
+
   border: 1px solid #ccc;
 
   border-radius: 10px;
@@ -266,4 +268,14 @@ font-weight: bolder;
 
 .card-image{
 margin: 10px -34px 10px 50px
+}
+
+
+.pos-f-t{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 9999;
+  background-color: red;
+  width: 100%
 }

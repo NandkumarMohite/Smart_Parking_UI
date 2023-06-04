@@ -1,5 +1,8 @@
 import React, { Component, useEffect, useState } from 'react'
 import chaddi from '../components/Mobile.jpg'
+import PaymentComponent from './PayementComponent';
+import CheckInComponant from './CheckInComponent';
+
 function WelcomeComponent() {
 
     const [plan, setPlan] = useState([]);
@@ -37,22 +40,32 @@ function WelcomeComponent() {
         "packageId": 12
     }]
 
-    // useEffect(() => {
-    //     var Response = {
-    //         "packageId": 1
-    //     }
-    //     setPlan(Response);
-    //     setpackageId(Response[0].packageId)
+    useEffect(() => {
+        fetch('http://localhost:8080/getfirst10', {
 
-    //   }, [])
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'accept': 'application/json'
+            },
+
+
+        }).then((result) => {
+            result.json().then((Response) => {
+                console.log(Response);
+                setPlan(Response);
+            })
+        })
+
+    }, [])
 
 
     return (
         <>
-
             <div className="container">
-                <div className="welcomComponentMain">
-                    <div className="sideBar" style={{position:'fixed'}}>
+                <div className="welcomComponentMain" style={{marginTop: '100px',  zIndex: '-1'}}>
+                    <div className="sideBar" style={{ position: 'fixed' }}>
 
                         <h3 >
                             Categories
@@ -151,22 +164,30 @@ function WelcomeComponent() {
 
                         </div>
                     </div>
+
+
+
+                
                     <div className="containtInf">
                         <div className="container">
                             <div className="row">
 
                                 {
-                                    Response.map(
+                                    plan.map(
                                         Response =>
                                             <tr key={Response.packageId}>
-                                                <div className="card">
-                                                    <div className="card-image">
-                                                        <img src={chaddi} alt="this is " />
-                                                    </div>
-                                                    <div className="imageInf">
-                                                        <h2>Chaddi</h2>
-                                                        <h4>250$</h4>
-                                                        <button className='buttonCart'>Add to cart</button>
+                                                <div className="col-md-6">
+                                                    <div className="card">
+                                                        <div className="card-image">
+                                                            <img src={chaddi} alt="this is " />
+                                                        </div>
+                                                        <div class="card-details">
+
+                                                            <h2>{Response.elementName}</h2>
+                                                            <h4 className='element-description'>{Response.elementDiscription}</h4>
+                                                            <button className='buttonCart'>Add to cart</button>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </tr>
@@ -178,7 +199,8 @@ function WelcomeComponent() {
                     </div>
                 </div>
             </div>
+        
         </>
 
-    )
+    );
 } export default WelcomeComponent;
